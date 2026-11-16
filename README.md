@@ -14,8 +14,8 @@ so you can still sign in.
   still gets redirected.
 - Allowed paths are listed in `extension/rules.js`.
 
-Note: posts and reels people send you in DMs are blocked too, since they open
-at `/p/...` or `/reel/...`.
+Posts and reels people send you open normally, but only straight from a DM:
+moving from one to another post, reel or profile sends you back to the inbox.
 
 ## Install
 **Temporary (removed when Firefox restarts):** go to `about:debugging#/runtime/this-firefox`,
@@ -27,7 +27,7 @@ click "Load Temporary Add-on…", pick `extension/manifest.json`.
   `npx web-ext sign -s extension --channel unlisted --api-key ... --api-secret ...`,
   then open the resulting `.xpi` in Firefox; or
 - use Firefox Developer Edition / Nightly, set `xpinstall.signatures.required`
-  to `false` in `about:config`, and install `dist/insta_dms_only-1.0.0.zip`
+  to `false` in `about:config`, and install `dist/insta_dms_only-1.1.0.zip`
   via `about:addons` → gear → "Install Add-on From File…".
 
 ## Test

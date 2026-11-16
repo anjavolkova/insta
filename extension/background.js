@@ -3,7 +3,16 @@
 browser.webRequest.onBeforeRequest.addListener(
   function (details) {
     var url = new URL(details.url);
-    if (isAllowedPath(url.pathname)) return {};
+
+    // Where the load came from, if it came from an Instagram page
+    // (e.g. middle-clicking a shared post in a DM to open a new tab).
+    var prevPath = null;
+    if (details.originUrl) {
+      var origin = new URL(details.originUrl);
+      if (/(^|\.)instagram\.com$/.test(origin.hostname)) prevPath = origin.pathname;
+    }
+
+    if (isAllowedMove(prevPath, url.pathname)) return {};
 
     if (details.type === "main_frame") {
       return { redirectUrl: url.origin + DM_HOME };

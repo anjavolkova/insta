@@ -6,13 +6,19 @@ a[href^="/?"],
 a[href="/explore/"],
 a[href^="/explore/"],
 a[href="/reels/"],
-a[href^="/reels/"],
-a[href^="/reel/"],
 a[href^="/stories/"],
-a[href^="/p/"],
 a[href="/threads/"],
 a[href*="threads.net"],
 a[href*="threads.com"],
 a[href="/accounts/activity/"] {
+  display: none !important;
+}
+
+/* While viewing a post/reel someone sent you, hide links to other posts
+   and reels ("more posts from..."). In DMs these links stay visible so you
+   can open what people send. */
+html[data-dms-only="item"] a[href^="/p/"],
+html[data-dms-only="item"] a[href^="/reel/"],
+html[data-dms-only="item"] a[href^="/reels/"] {
   display: none !important;
 }
