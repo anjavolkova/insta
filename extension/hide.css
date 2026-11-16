@@ -1,0 +1,18 @@
+/* Cosmetic: hide links that lead out of DMs so there's nothing to tap.
+   The redirect in content.js is what actually enforces the block; these
+   selectors are best-effort and may need updating when Instagram changes. */
+a[href="/"],
+a[href^="/?"],
+a[href="/explore/"],
+a[href^="/explore/"],
+a[href="/reels/"],
+a[href^="/reels/"],
+a[href^="/reel/"],
+a[href^="/stories/"],
+a[href^="/p/"],
+a[href="/threads/"],
+a[href*="threads.net"],
+a[href*="threads.com"],
+a[href="/accounts/activity/"] {
+  display: none !important;
+}
