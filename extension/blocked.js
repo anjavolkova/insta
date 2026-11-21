@@ -11,6 +11,6 @@ if (q.get("reason") === "time") {
 } else {
   title.textContent = "Reddit is blocked";
   text.textContent =
-    "A thread still opens when you follow a link to it from outside Reddit, like a Google result, " +
-    "for " + REDDIT_THREAD_MINUTES + " minutes. Browsing Reddit itself doesn't.";
+    "You can still open a thread from a link outside Reddit, like a Google result, " +
+    "for " + REDDIT_THREAD_MINUTES + " minutes at a time.";
 }

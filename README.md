@@ -37,7 +37,7 @@ click "Load Temporary Add-on…", pick `extension/manifest.json`.
   `npx web-ext sign -s extension --channel unlisted --api-key ... --api-secret ...`,
   then open the resulting `.xpi` in Firefox; or
 - use Firefox Developer Edition / Nightly, set `xpinstall.signatures.required`
-  to `false` in `about:config`, and install `dist/insta_dms_only-1.2.0.zip`
+  to `false` in `about:config`, and install `dist/insta_dms_only-1.2.1.zip`
   via `about:addons` → gear → "Install Add-on From File…".
 
 ## Test

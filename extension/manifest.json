@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Insta DMs Only",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Instagram: DMs only. Reddit: only threads opened from outside links, 5 minutes each.",
   "browser_specific_settings": {
     "gecko": {
