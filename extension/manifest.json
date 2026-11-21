@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Insta DMs Only",
-  "version": "1.1.0",
-  "description": "Blocks everything on Instagram except Direct Messages.",
+  "version": "1.2.0",
+  "description": "Instagram: DMs only. Reddit: only threads opened from outside links, 5 minutes each.",
   "browser_specific_settings": {
     "gecko": {
       "id": "insta-dms-only@local",
@@ -13,8 +13,11 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
+    "storage",
     "*://instagram.com/*",
-    "*://*.instagram.com/*"
+    "*://*.instagram.com/*",
+    "*://reddit.com/*",
+    "*://*.reddit.com/*"
   ],
   "background": {
     "scripts": ["rules.js", "background.js"]
@@ -22,10 +25,16 @@
   "content_scripts": [
     {
       "matches": ["*://instagram.com/*", "*://*.instagram.com/*"],
-      "js": ["rules.js", "content.js"],
-      "css": ["hide.css"],
+      "js": ["rules.js", "instagram.js"],
+      "css": ["instagram.css"],
       "run_at": "document_start",
       "all_frames": true
+    },
+    {
+      "matches": ["*://reddit.com/*", "*://*.reddit.com/*"],
+      "js": ["rules.js", "reddit.js"],
+      "run_at": "document_start"
     }
-  ]
+  ],
+  "web_accessible_resources": ["blocked.html"]
 }
